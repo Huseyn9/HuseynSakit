@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="NewDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="NewDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Gender">
           <Key>
             <PropertyRef Name="id" />
@@ -89,7 +89,7 @@
           <Property Name="task_end_date" Type="datetime" Nullable="false" />
           <Property Name="task_point" Type="float" Nullable="false" />
           <Property Name="task_source" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="task_note" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="task_note" Type="nvarchar(max)" />
           <Property Name="task_group_id" Type="int" />
           <Property Name="task_student_id" Type="int" />
         </EntityType>
@@ -190,6 +190,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Tasks_Groups">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="task_group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Tasks_Students">
           <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
           <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
@@ -264,6 +276,10 @@
             <End Role="Groups" EntitySet="Groups" />
             <End Role="Students" EntitySet="Students" />
           </AssociationSet>
+          <AssociationSet Name="FK_Tasks_Groups" Association="Self.FK_Tasks_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
           <AssociationSet Name="FK_Tasks_Students" Association="Self.FK_Tasks_Students">
             <End Role="Students" EntitySet="Students" />
             <End Role="Tasks" EntitySet="Tasks" />
@@ -277,8 +293,7 @@
             <End Role="Teachers" EntitySet="Teachers" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NewDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -326,6 +341,7 @@
           <NavigationProperty Name="Mentor" Relationship="Self.FK_Groups_Mentors" FromRole="Groups" ToRole="Mentors" />
           <NavigationProperty Name="Teacher" Relationship="Self.FK_Groups_Teachers" FromRole="Groups" ToRole="Teachers" />
           <NavigationProperty Name="Students" Relationship="Self.FK_Students_Groups" FromRole="Groups" ToRole="Students" />
+          <NavigationProperty Name="Tasks" Relationship="NewDBModel.FK_Tasks_Groups" FromRole="Group" ToRole="Task" />
         </EntityType>
         <EntityType Name="Mentor">
           <Key>
@@ -382,11 +398,12 @@
           <Property Name="task_end_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="task_point" Type="Double" Nullable="false" />
           <Property Name="task_source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="task_note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="task_note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="task_group_id" Type="Int32" />
           <Property Name="task_student_id" Type="Int32" />
           <NavigationProperty Name="Student" Relationship="Self.FK_Tasks_Students" FromRole="Tasks" ToRole="Students" />
           <NavigationProperty Name="Task_types" Relationship="Self.FK_Tasks_Task_types" FromRole="Tasks" ToRole="Task_types" />
+          <NavigationProperty Name="Group" Relationship="NewDBModel.FK_Tasks_Groups" FromRole="Task" ToRole="Group" />
         </EntityType>
         <EntityType Name="Teacher">
           <Key>
@@ -573,7 +590,23 @@
             <End Role="Task_types" EntitySet="Task_types" />
             <End Role="Tasks" EntitySet="Tasks" />
           </AssociationSet>
+          <AssociationSet Name="FK_Tasks_Groups" Association="NewDBModel.FK_Tasks_Groups">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="Task" EntitySet="Tasks" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Tasks_Groups">
+          <End Type="NewDBModel.Group" Role="Group" Multiplicity="0..1" />
+          <End Type="NewDBModel.Task" Role="Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="task_group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
