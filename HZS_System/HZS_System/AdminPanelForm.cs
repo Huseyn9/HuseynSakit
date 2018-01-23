@@ -15,12 +15,28 @@ namespace HZS_System
         public AdminPanelForm()
         {
             InitializeComponent();
+            this.button2.Click += new EventHandler(this.ShowMentorForm);
+            this.button3.Click += new EventHandler(this.ShowStudentForm);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             TeacherPanel teacher = new TeacherPanel();
             teacher.ShowDialog();
+        }
+
+
+        private void ShowMentorForm(object sender, EventArgs e)
+        {
+            MentorForm form = new MentorForm();
+            form.ShowDialog();
+        }
+
+
+        private void ShowStudentForm(object sender, EventArgs e)
+        {
+            StudentPanel form = new StudentPanel();
+            form.ShowDialog();
         }
     }
 }

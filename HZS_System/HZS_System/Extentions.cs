@@ -8,6 +8,9 @@ namespace HZS_System
 {
     public static class Extentions
     {
+
+        public static string uploads_path = @"C:\Users\Sakit\Desktop\COPY-Final\HZS_System\HZS_System\Uploads\";
+
         public static string getHashCode(string password)
         {
             byte[] data = new System.Text.ASCIIEncoding().GetBytes(password);

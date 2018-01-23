@@ -36,6 +36,7 @@ namespace HZS_System
             this.btn_update.Click += new EventHandler(this.Update);
         }
 
+
         private void Fill_mentor_data(List<Mentor> mentors)
         {
             this.dgwMentor.Rows.Clear();
@@ -75,6 +76,8 @@ namespace HZS_System
             this.btn_delet.Visible = false;
             this.btn_update.Visible = false;
             this.btn_save.Visible = true;
+            this.txt_email.ReadOnly = false;
+            this.txt_password.ReadOnly = false;
         }
 
         private void File_upload(object sender, EventArgs e)

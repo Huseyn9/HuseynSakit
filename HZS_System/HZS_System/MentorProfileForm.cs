@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace HZS_System
 {
-    public partial class StudentPanel : Form
+    public partial class MentorProfileForm : Form
     {
-        public StudentPanel()
+        public MentorProfileForm()
         {
             InitializeComponent();
         }
-        
     }
 }

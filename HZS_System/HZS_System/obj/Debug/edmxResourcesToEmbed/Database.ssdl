@@ -84,7 +84,7 @@
     <Property Name="task_end_date" Type="datetime" Nullable="false" />
     <Property Name="task_point" Type="float" Nullable="false" />
     <Property Name="task_source" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="task_note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="task_note" Type="nvarchar(max)" />
     <Property Name="task_group_id" Type="int" />
     <Property Name="task_student_id" Type="int" />
   </EntityType>
@@ -185,6 +185,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Tasks_Groups">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="task_group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Tasks_Students">
     <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
     <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
@@ -258,6 +270,10 @@
     <AssociationSet Name="FK_Students_Groups" Association="Self.FK_Students_Groups">
       <End Role="Groups" EntitySet="Groups" />
       <End Role="Students" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tasks_Groups" Association="Self.FK_Tasks_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="Tasks" EntitySet="Tasks" />
     </AssociationSet>
     <AssociationSet Name="FK_Tasks_Students" Association="Self.FK_Tasks_Students">
       <End Role="Students" EntitySet="Students" />
