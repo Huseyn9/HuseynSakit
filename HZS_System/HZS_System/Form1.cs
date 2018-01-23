@@ -21,12 +21,13 @@ namespace HZS_System
 
         private void Login(object sender, EventArgs e)
         {
-            string password = Extentions.getHashCode(this.txt_password.Text);
+            string password = this.txt_password.Text;
             string email = this.txt_email.Text;
+            Teacher admin = db.Teachers.FirstOrDefault(t => t.teacher_email==email && t.teacher_password == password);
             Student student = db.Students.FirstOrDefault(s => s.student_email == email && s.student_password == password);
             Mentor mentor = db.Mentors.FirstOrDefault(m => m.mentor_email == email && m.mentor_password == password);
             Teacher teacher = db.Teachers.FirstOrDefault(t => t.teacher_email == email && t.teacher_password == password);
-            if (teacher != null && teacher.id == 2) 
+            if (admin != null && admin.id == 17) 
             {
                 AdminPanelForm form = new AdminPanelForm();
                 form.ShowDialog();
@@ -34,13 +35,10 @@ namespace HZS_System
             else if (student != null)
             {
                 MessageBox.Show("Strudent");
-            }
-            else if (mentor != null)
+            }else if (mentor != null)
             {
-                MentorForm form = new MentorForm();
-                form.ShowDialog();
-            }
-            else if (teacher != null)
+                MessageBox.Show("Mentor");
+            }else if (teacher != null)
             {
                 MessageBox.Show("Teacher");
             }

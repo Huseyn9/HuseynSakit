@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace HZS_System
 {
-    public partial class AdminPanelForm : Form
+    public partial class StudentPanel : Form
     {
-        public AdminPanelForm()
+        public StudentPanel()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            TeacherPanel teacher = new TeacherPanel();
-            teacher.ShowDialog();
         }
     }
 }

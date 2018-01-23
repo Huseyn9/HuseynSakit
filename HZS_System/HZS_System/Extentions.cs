@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,8 +8,6 @@ namespace HZS_System
 {
     public static class Extentions
     {
-        public static string uploads_path = @"C:\Users\Sakit\Desktop\Final-Form-app\HZS_System\HZS_System\Uploads\";
-        
         public static string getHashCode(string password)
         {
             byte[] data = new System.Text.ASCIIEncoding().GetBytes(password);
