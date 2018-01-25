@@ -33,14 +33,6 @@
             this.txt_name = new System.Windows.Forms.TextBox();
             this.btn_add = new System.Windows.Forms.Button();
             this.dgv_teacher = new System.Windows.Forms.DataGridView();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,15 +42,22 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.txt_phone = new System.Windows.Forms.TextBox();
             this.txt_info = new System.Windows.Forms.RichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pct_teacher = new System.Windows.Forms.PictureBox();
             this.txt_gender = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_upload = new System.Windows.Forms.Label();
             this.txt_password = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_teacher)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_teacher)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +75,12 @@
             // txt_name
             // 
             this.txt_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.txt_name.Location = new System.Drawing.Point(496, 127);
+=======
+            this.txt_name.Location = new System.Drawing.Point(175, 50);
+            this.txt_name.Margin = new System.Windows.Forms.Padding(1);
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             this.txt_name.Multiline = true;
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(452, 67);
@@ -85,7 +89,12 @@
             // btn_add
             // 
             this.btn_add.BackColor = System.Drawing.Color.DarkSeaGreen;
+<<<<<<< HEAD
             this.btn_add.Location = new System.Drawing.Point(1363, 825);
+=======
+            this.btn_add.Location = new System.Drawing.Point(481, 325);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(1);
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(266, 96);
             this.btn_add.TabIndex = 2;
@@ -104,53 +113,19 @@
             this.Column3,
             this.Column4,
             this.Column5,
+<<<<<<< HEAD
             this.Column6,
             this.Column7});
             this.dgv_teacher.Location = new System.Drawing.Point(130, 942);
+=======
+            this.Column6});
+            this.dgv_teacher.Location = new System.Drawing.Point(46, 371);
+            this.dgv_teacher.Margin = new System.Windows.Forms.Padding(1);
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             this.dgv_teacher.Name = "dgv_teacher";
             this.dgv_teacher.RowTemplate.Height = 42;
             this.dgv_teacher.Size = new System.Drawing.Size(2669, 543);
             this.dgv_teacher.TabIndex = 3;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "id";
-            this.Column8.Name = "Column8";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "name";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "surname";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "email";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "gender";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "phone";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "info";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "photo";
-            this.Column7.Name = "Column7";
             // 
             // label2
             // 
@@ -215,7 +190,12 @@
             // txt_surname
             // 
             this.txt_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.txt_surname.Location = new System.Drawing.Point(496, 277);
+=======
+            this.txt_surname.Location = new System.Drawing.Point(175, 109);
+            this.txt_surname.Margin = new System.Windows.Forms.Padding(1);
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             this.txt_surname.Multiline = true;
             this.txt_surname.Name = "txt_surname";
             this.txt_surname.Size = new System.Drawing.Size(452, 70);
@@ -224,7 +204,12 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.textBox3.Location = new System.Drawing.Point(496, 426);
+=======
+            this.textBox3.Location = new System.Drawing.Point(175, 168);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(1);
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(452, 70);
@@ -233,7 +218,12 @@
             // txt_phone
             // 
             this.txt_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.90909F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.txt_phone.Location = new System.Drawing.Point(1391, 107);
+=======
+            this.txt_phone.Location = new System.Drawing.Point(491, 50);
+            this.txt_phone.Margin = new System.Windows.Forms.Padding(1);
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             this.txt_phone.Multiline = true;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.Size = new System.Drawing.Size(446, 70);
@@ -241,14 +231,20 @@
             // 
             // txt_info
             // 
+<<<<<<< HEAD
             this.txt_info.Location = new System.Drawing.Point(1363, 452);
+=======
+            this.txt_info.Location = new System.Drawing.Point(491, 168);
+            this.txt_info.Margin = new System.Windows.Forms.Padding(1);
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             this.txt_info.Name = "txt_info";
             this.txt_info.Size = new System.Drawing.Size(780, 286);
             this.txt_info.TabIndex = 14;
             this.txt_info.Text = "";
             // 
-            // pictureBox1
+            // pct_teacher
             // 
+<<<<<<< HEAD
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(2397, 46);
             this.pictureBox1.Name = "pictureBox1";
@@ -256,18 +252,34 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
+=======
+            this.pct_teacher.Image = ((System.Drawing.Image)(resources.GetObject("pct_teacher.Image")));
+            this.pct_teacher.Location = new System.Drawing.Point(846, 18);
+            this.pct_teacher.Margin = new System.Windows.Forms.Padding(1);
+            this.pct_teacher.Name = "pct_teacher";
+            this.pct_teacher.Size = new System.Drawing.Size(141, 185);
+            this.pct_teacher.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pct_teacher.TabIndex = 15;
+            this.pct_teacher.TabStop = false;
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             // 
             // txt_gender
             // 
             this.txt_gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.90909F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_gender.FormattingEnabled = true;
+<<<<<<< HEAD
             this.txt_gender.Location = new System.Drawing.Point(496, 576);
+=======
+            this.txt_gender.Location = new System.Drawing.Point(175, 227);
+            this.txt_gender.Margin = new System.Windows.Forms.Padding(1);
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             this.txt_gender.Name = "txt_gender";
             this.txt_gender.Size = new System.Drawing.Size(452, 67);
             this.txt_gender.TabIndex = 16;
             // 
-            // label7
+            // lbl_upload
             // 
+<<<<<<< HEAD
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.90909F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -277,11 +289,28 @@
             this.label7.Size = new System.Drawing.Size(187, 46);
             this.label7.TabIndex = 17;
             this.label7.Text = "Browse...";
+=======
+            this.lbl_upload.AutoSize = true;
+            this.lbl_upload.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_upload.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.90909F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_upload.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lbl_upload.Location = new System.Drawing.Point(844, 227);
+            this.lbl_upload.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lbl_upload.Name = "lbl_upload";
+            this.lbl_upload.Size = new System.Drawing.Size(71, 18);
+            this.lbl_upload.TabIndex = 17;
+            this.lbl_upload.Text = "Browse...";
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             // 
             // txt_password
             // 
             this.txt_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.90909F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.txt_password.Location = new System.Drawing.Point(1391, 282);
+=======
+            this.txt_password.Location = new System.Drawing.Point(491, 111);
+            this.txt_password.Margin = new System.Windows.Forms.Padding(1);
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             this.txt_password.Multiline = true;
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(446, 70);
@@ -302,7 +331,12 @@
             // btn_delete
             // 
             this.btn_delete.BackColor = System.Drawing.Color.DarkSeaGreen;
+<<<<<<< HEAD
             this.btn_delete.Location = new System.Drawing.Point(1697, 825);
+=======
+            this.btn_delete.Location = new System.Drawing.Point(599, 325);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(1);
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(266, 96);
             this.btn_delete.TabIndex = 20;
@@ -314,7 +348,12 @@
             // btn_update
             // 
             this.btn_update.BackColor = System.Drawing.Color.DarkSeaGreen;
+<<<<<<< HEAD
             this.btn_update.Location = new System.Drawing.Point(2023, 825);
+=======
+            this.btn_update.Location = new System.Drawing.Point(714, 325);
+            this.btn_update.Margin = new System.Windows.Forms.Padding(1);
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(266, 96);
             this.btn_update.TabIndex = 21;
@@ -322,18 +361,58 @@
             this.btn_update.UseVisualStyleBackColor = false;
             this.btn_update.Visible = false;
             // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "id";
+            this.Column8.Name = "Column8";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "name";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "surname";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "email";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "gender";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "phone";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "info";
+            this.Column6.Name = "Column6";
+            // 
             // TeacherPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(2884, 1043);
+=======
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1038, 509);
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lbl_upload);
             this.Controls.Add(this.txt_gender);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pct_teacher);
             this.Controls.Add(this.txt_info);
             this.Controls.Add(this.txt_phone);
             this.Controls.Add(this.textBox3);
@@ -347,12 +426,16 @@
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.label1);
+<<<<<<< HEAD
+=======
+            this.Margin = new System.Windows.Forms.Padding(1);
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
             this.Name = "TeacherPanel";
             this.Text = "TeacherPanel";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TeacherPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_teacher)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_teacher)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,9 +456,9 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox txt_phone;
         private System.Windows.Forms.RichTextBox txt_info;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pct_teacher;
         private System.Windows.Forms.ComboBox txt_gender;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_upload;
         private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn_delete;
@@ -387,6 +470,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

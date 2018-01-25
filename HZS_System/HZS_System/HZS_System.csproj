@@ -38,6 +38,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -97,6 +103,24 @@
     <Compile Include="Group.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
+    <Compile Include="GroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupForm.Designer.cs">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupScheduleForm.Designer.cs">
+      <DependentUpon>GroupScheduleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupTypeForm.Designer.cs">
+      <DependentUpon>GroupTypeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Group_schedule.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
@@ -112,11 +136,11 @@
     <Compile Include="MentorForm.Designer.cs">
       <DependentUpon>MentorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MentorProfileForm.cs">
+    <Compile Include="ProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MentorProfileForm.Designer.cs">
-      <DependentUpon>MentorProfileForm.cs</DependentUpon>
+    <Compile Include="ProfileForm.Designer.cs">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,11 +162,19 @@
     <Compile Include="Task.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="TaskPanel2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TaskPanel2.Designer.cs">
       <DependentUpon>TaskPanel2.cs</DependentUpon>
+=======
+    <Compile Include="TaskTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskTypeForm.Designer.cs">
+      <DependentUpon>TaskTypeForm.cs</DependentUpon>
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
     </Compile>
     <Compile Include="Task_types.cs">
       <DependentUpon>Database.tt</DependentUpon>
@@ -162,14 +194,25 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="GenderPanel.resx">
       <DependentUpon>GenderPanel.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="GroupForm.resx">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupScheduleForm.resx">
+      <DependentUpon>GroupScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupTypeForm.resx">
+      <DependentUpon>GroupTypeForm.cs</DependentUpon>
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
     </EmbeddedResource>
     <EmbeddedResource Include="MentorForm.resx">
       <DependentUpon>MentorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MentorProfileForm.resx">
-      <DependentUpon>MentorProfileForm.cs</DependentUpon>
+    <EmbeddedResource Include="ProfileForm.resx">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -183,11 +226,16 @@
     <EmbeddedResource Include="StudentPanel.resx">
       <DependentUpon>StudentPanel.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="StudentProfilForm.resx">
       <DependentUpon>StudentProfilForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaskPanel2.resx">
       <DependentUpon>TaskPanel2.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="TaskTypeForm.resx">
+      <DependentUpon>TaskTypeForm.cs</DependentUpon>
+>>>>>>> 638bc23a2490ae9a00d197094749e2aa4f13147f
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherPanel.resx">
       <DependentUpon>TeacherPanel.cs</DependentUpon>
@@ -245,6 +293,17 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
