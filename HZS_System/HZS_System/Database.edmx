@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="NewDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="Gender">
           <Key>
             <PropertyRef Name="id" />
@@ -66,7 +74,7 @@
           <Property Name="student_github_account" Type="nvarchar(max)" Nullable="false" />
           <Property Name="student_info" Type="nvarchar(max)" Nullable="false" />
           <Property Name="student_photo" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="student_cap_point" Type="float" Nullable="false" />
+          <Property Name="student_cap_point" Type="float" />
           <Property Name="student_group_id" Type="int" Nullable="false" />
           <Property Name="student_gender_id" Type="int" Nullable="false" />
           <Property Name="student_password" Type="nvarchar(max)" Nullable="false" />
@@ -89,7 +97,7 @@
           <Property Name="task_end_date" Type="datetime" Nullable="false" />
           <Property Name="task_point" Type="float" Nullable="false" />
           <Property Name="task_source" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="task_note" Type="nvarchar(max)" />
+          <Property Name="task_note" Type="nvarchar(max)" Nullable="false" />
           <Property Name="task_group_id" Type="int" />
           <Property Name="task_student_id" Type="int" />
         </EntityType>
@@ -105,6 +113,7 @@
           <Property Name="teacher_info" Type="nvarchar(max)" Nullable="false" />
           <Property Name="teacher_gender_id" Type="int" Nullable="false" />
           <Property Name="teacher_password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="teacher_photo" Type="nvarchar(max)" />
         </EntityType>
         <Association Name="FK_Group_types_Group_schedule">
           <End Role="Group_schedule" Type="Self.Group_schedule" Multiplicity="1" />
@@ -239,6 +248,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="NewDBModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Group_schedule" EntityType="Self.Group_schedule" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Group_types" EntityType="Self.Group_types" Schema="dbo" store:Type="Tables" />
@@ -371,7 +381,7 @@
           <Property Name="student_github_account" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="student_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="student_photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="student_cap_point" Type="Double" Nullable="false" />
+          <Property Name="student_cap_point" Type="Double" />
           <Property Name="student_group_id" Type="Int32" Nullable="false" />
           <Property Name="student_gender_id" Type="Int32" Nullable="false" />
           <Property Name="student_password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
@@ -398,7 +408,7 @@
           <Property Name="task_end_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="task_point" Type="Double" Nullable="false" />
           <Property Name="task_source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="task_note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="task_note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="task_group_id" Type="Int32" />
           <Property Name="task_student_id" Type="Int32" />
           <NavigationProperty Name="Student" Relationship="Self.FK_Tasks_Students" FromRole="Tasks" ToRole="Students" />
@@ -419,6 +429,7 @@
           <Property Name="teacher_password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Gender" Relationship="Self.FK_Teachers_Gender" FromRole="Teachers" ToRole="Gender" />
           <NavigationProperty Name="Groups" Relationship="Self.FK_Groups_Teachers" FromRole="Teachers" ToRole="Groups" />
+          <Property Name="teacher_photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Mentors_Gender">
           <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
@@ -594,6 +605,7 @@
             <End Role="Group" EntitySet="Groups" />
             <End Role="Task" EntitySet="Tasks" />
           </AssociationSet>
+          <EntitySet Name="Admins" EntityType="NewDBModel.Admin" />
         </EntityContainer>
         <Association Name="FK_Tasks_Groups">
           <End Type="NewDBModel.Group" Role="Group" Multiplicity="0..1" />
@@ -607,6 +619,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -712,6 +732,7 @@
           <EntitySetMapping Name="Teachers">
             <EntityTypeMapping TypeName="NewDBModel.Teacher">
               <MappingFragment StoreEntitySet="Teachers">
+                <ScalarProperty Name="teacher_photo" ColumnName="teacher_photo" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="teacher_name" ColumnName="teacher_name" />
                 <ScalarProperty Name="teacher_surname" ColumnName="teacher_surname" />
@@ -720,6 +741,15 @@
                 <ScalarProperty Name="teacher_info" ColumnName="teacher_info" />
                 <ScalarProperty Name="teacher_gender_id" ColumnName="teacher_gender_id" />
                 <ScalarProperty Name="teacher_password" ColumnName="teacher_password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="NewDBModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

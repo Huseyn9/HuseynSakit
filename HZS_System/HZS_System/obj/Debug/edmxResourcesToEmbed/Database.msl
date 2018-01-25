@@ -100,6 +100,7 @@
     <EntitySetMapping Name="Teachers">
       <EntityTypeMapping TypeName="NewDBModel.Teacher">
         <MappingFragment StoreEntitySet="Teachers">
+          <ScalarProperty Name="teacher_photo" ColumnName="teacher_photo" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="teacher_name" ColumnName="teacher_name" />
           <ScalarProperty Name="teacher_surname" ColumnName="teacher_surname" />
@@ -108,6 +109,15 @@
           <ScalarProperty Name="teacher_info" ColumnName="teacher_info" />
           <ScalarProperty Name="teacher_gender_id" ColumnName="teacher_gender_id" />
           <ScalarProperty Name="teacher_password" ColumnName="teacher_password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="NewDBModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

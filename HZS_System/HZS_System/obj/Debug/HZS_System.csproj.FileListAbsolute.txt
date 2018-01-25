@@ -62,4 +62,9 @@ C:\Users\Sakit\Desktop\COPY-Final\HZS_System\HZS_System\obj\Debug\HZS_System.csp
 C:\Users\Sakit\Desktop\COPY-Final\HZS_System\HZS_System\obj\Debug\HZS_System.exe
 C:\Users\Sakit\Desktop\COPY-Final\HZS_System\HZS_System\obj\Debug\HZS_System.pdb
 C:\Users\Sakit\Desktop\COPY-Final\HZS_System\HZS_System\obj\Debug\HZS_System.MentorForm.resources
-C:\Users\Sakit\Desktop\COPY-Final\HZS_System\HZS_System\obj\Debug\HZS_System.MentorProfileForm.resources
+C:\Users\Sakit\Desktop\COPY-Final\HZS_System\HZS_System\obj\Debug\HZS_System.GroupScheduleForm.resources
+C:\Users\Sakit\Desktop\COPY-Final\HZS_System\HZS_System\obj\Debug\HZS_System.GroupForm.resources
+C:\Users\Sakit\Desktop\COPY-Final\HZS_System\HZS_System\obj\Debug\HZS_System.GroupTypeForm.resources
+C:\Users\Sakit\Desktop\COPY-Final\HZS_System\HZS_System\obj\Debug\HZS_System.TaskTypeForm.resources
+C:\Users\Sakit\Desktop\COPY-Final\HZS_System\HZS_System\obj\Debug\HZS_System.csproj.ResolveComReference.cache
+C:\Users\Sakit\Desktop\COPY-Final\HZS_System\HZS_System\obj\Debug\HZS_System.ProfileForm.resources

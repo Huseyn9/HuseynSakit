@@ -34,5 +34,6 @@ namespace HZS_System
         public virtual DbSet<Task_types> Task_types { get; set; }
         public virtual DbSet<Task> Tasks { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
+        public virtual DbSet<Admin> Admins { get; set; }
     }
 }
