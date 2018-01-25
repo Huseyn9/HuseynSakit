@@ -25,6 +25,7 @@
         <AssociationConnector Association="NewDBModel.FK_Tasks_Students" ManuallyRouted="false" />
         <AssociationConnector Association="NewDBModel.FK_Tasks_Task_types" ManuallyRouted="false" />
         <AssociationConnector Association="NewDBModel.FK_Tasks_Groups" />
+        <EntityTypeShape EntityType="NewDBModel.Admin" Width="1.5" PointX="5.5" PointY="2" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

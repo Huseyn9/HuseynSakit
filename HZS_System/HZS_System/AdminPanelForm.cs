@@ -38,5 +38,23 @@ namespace HZS_System
             StudentPanel form = new StudentPanel();
             form.ShowDialog();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            GenderPanel gender = new GenderPanel();
+            gender.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            TaskPanel2 tasks = new TaskPanel2();
+            tasks.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            StudentProfilForm student = new StudentProfilForm();
+            student.ShowDialog();
+        }
     }
 }

@@ -297,6 +297,7 @@
       <End Role="Group" EntitySet="Groups" />
       <End Role="Task" EntitySet="Tasks" />
     </AssociationSet>
+    <EntitySet Name="Admins" EntityType="NewDBModel.Admin" />
   </EntityContainer>
   <Association Name="FK_Tasks_Groups">
     <End Type="NewDBModel.Group" Role="Group" Multiplicity="0..1" />
@@ -310,4 +311,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

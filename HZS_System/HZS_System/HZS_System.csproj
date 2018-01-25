@@ -54,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +87,12 @@
     </Compile>
     <Compile Include="Gender.cs">
       <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GenderPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenderPanel.Designer.cs">
+      <DependentUpon>GenderPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Group.cs">
       <DependentUpon>Database.tt</DependentUpon>
@@ -120,8 +129,20 @@
     <Compile Include="StudentPanel.Designer.cs">
       <DependentUpon>StudentPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentProfilForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentProfilForm.Designer.cs">
+      <DependentUpon>StudentProfilForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Task.cs">
       <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPanel2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskPanel2.Designer.cs">
+      <DependentUpon>TaskPanel2.cs</DependentUpon>
     </Compile>
     <Compile Include="Task_types.cs">
       <DependentUpon>Database.tt</DependentUpon>
@@ -141,6 +162,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenderPanel.resx">
+      <DependentUpon>GenderPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MentorForm.resx">
       <DependentUpon>MentorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +182,12 @@
     </Compile>
     <EmbeddedResource Include="StudentPanel.resx">
       <DependentUpon>StudentPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentProfilForm.resx">
+      <DependentUpon>StudentProfilForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskPanel2.resx">
+      <DependentUpon>TaskPanel2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherPanel.resx">
       <DependentUpon>TeacherPanel.cs</DependentUpon>
